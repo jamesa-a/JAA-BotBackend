@@ -116,18 +116,47 @@ Cloud Maintenance windows are one of the most common questions asked about by cu
 
         [
             {
-                "question": "Which part of CanDo workshops are you interested in?",
+                "question": "What aspect of Cloud Maintenance windows are you interested in?",
                 "published_at": "2017-05-26T00:00:00.000Z",
                 "choices": [
                     {
-                        "choice": "AppDev"
+                        "choice": "Infrastructure"
                     }, {
-                        "choice": "DevOps"
+                        "choice": "Platform"
                     }, {
-                        "choice": "CI/CD"
-                    }, {
-                        "choice": "WorkshopLocation"
+                        "choice": "Software"
                     }
                 ]
+            }
+        ]
+        
+        
+## NCER Collection [/ncer]
+
+### NCER Location [GET]
+
+NCER is one of the best kept secrets int eh Sales world. The ability to get a cloud account with more resource, for more time for a customer. This returns the URL for the NCER process.
+(Next step is to include a description of the process itself to explain the basic flow.
+
++ Response 200 (application/json)
+
+        [
+            {
+                "ncerlocation": "http://myurl.xyw.com/ncercontent",
+            }
+        ]
+        
+## Corporte Folio Collection [/corpFolio]
+
+### Corpoate Folio Location [GET]
+
+Corporate Folio is a number of useful URLs that provide info for RFP and RFI responses concnering corporate infromation, product development practices and other useful metrics and data for resposnes to typical customer questions. 
+Usually bioilerplate, these resposnes can seriously shorten the process of completing the standard questions for an RFP or RFI.
+
++ Response 200 (application/json)
+
+        [
+            {
+                "corpFolio": "http://myurl.xyw.com/corpFolio",
             }
         ]
