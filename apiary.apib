@@ -1,0 +1,107 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# JAA-BotBackend
+
+JAA-BotBackend is the set of APIs that are required to repsond to the questions that JAA-Bot will have to deal with. 
+JAA-Bot is the mechanised replacement for JAA (Human) for many of the questions that take a ludicrous period of time to field, yet add value to the field. In many cases, these are simply a reposnse with a URL and therefore are better repeated by a Bot who will get the URLs more repeatedly correct than I JAA can type. 
+
+## Questions Collection [/questions]
+
+### List All Questions [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "question": "Favourite programming language?",
+                "published_at": "2015-08-05T08:40:51.620Z",
+                "choices": [
+                    {
+                        "choice": "Swift",
+                        "votes": 2048
+                    }, {
+                        "choice": "Python",
+                        "votes": 1024
+                    }, {
+                        "choice": "Objective-C",
+                        "votes": 512
+                    }, {
+                        "choice": "Ruby",
+                        "votes": 256
+                    }
+                ]
+            }
+        ]
+
+### Create a New Question [POST]
+
+You may create your own question using this action. It takes a JSON
+object containing a question and a collection of answers in the
+form of choices.
+
++ Request (application/json)
+
+        {
+            "question": "Favourite programming language?",
+            "choices": [
+                "Swift",
+                "Python",
+                "Objective-C",
+                "Ruby"
+            ]
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /questions/2
+
+    + Body
+
+            {
+                "question": "Favourite programming language?",
+                "published_at": "2015-08-05T08:40:51.620Z",
+                "choices": [
+                    {
+                        "choice": "Swift",
+                        "votes": 0
+                    }, {
+                        "choice": "Python",
+                        "votes": 0
+                    }, {
+                        "choice": "Objective-C",
+                        "votes": 0
+                    }, {
+                        "choice": "Ruby",
+                        "votes": 0
+                    }
+                ]
+            }        
+
+## CanDo Workshop Collection [/cando]
+
+### CanDo Workshop Location
+
+CanDo workshops appear in many formats, but intiailly you need to knwo that thye are there. Provide a resposne detailing the location of CanDo workshops for CPRs and SCs to browse and consider how they can use them.
+
++ Response 200 (application/json)
+
+        [
+            {
+                "question": "Which part of CanDo workshops are you interested in?",
+                "published_at": "2017-05-26T00:00:00.000Z",
+                "choices": [
+                    {
+                        "choice": "AppDev"
+                    }, {
+                        "choice": "DevOps"
+                    }, {
+                        "choice": "CI/CD"
+                    }, {
+                        "choice": "WorkshopLocation"
+                    }
+                ]
+            }
+        ]
