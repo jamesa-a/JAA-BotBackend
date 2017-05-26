@@ -146,9 +146,9 @@ NCER is one of the best kept secrets int eh Sales world. The ability to get a cl
             }
         ]
         
-## Corporte Folio Collection [/corpFolio]
+## Corporate Folio Collection [/corpFolio]
 
-### Corpoate Folio Location [GET]
+### Corporate Folio Location [GET]
 
 Corporate Folio is a number of useful URLs that provide info for RFP and RFI responses concnering corporate infromation, product development practices and other useful metrics and data for resposnes to typical customer questions. 
 Usually bioilerplate, these resposnes can seriously shorten the process of completing the standard questions for an RFP or RFI.
@@ -158,5 +158,19 @@ Usually bioilerplate, these resposnes can seriously shorten the process of compl
         [
             {
                 "corpFolio": "http://myurl.xyw.com/corpFolio",
+            }
+        ]
+        
+## Cloud Trial Collection [/cloudTrial]
+
+### Cloud Trial Location [GET]
+
+There are a numebr of different options for customer trials today and, following the introduction of cost limited trials, there remains a need for 30 day trials. This API delivers the URL for getting a trial, the old fashioned way.
+
++ Response 200 (application/json)
+
+        [
+            {
+                "trial30days": "http://myurl.xyw.com/trials30days",
             }
         ]
