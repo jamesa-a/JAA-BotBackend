@@ -82,9 +82,35 @@ form of choices.
 
 ## CanDo Workshop Collection [/cando]
 
-### CanDo Workshop Location
+### CanDo Workshop Location [GET]
 
 CanDo workshops appear in many formats, but intiailly you need to knwo that thye are there. Provide a resposne detailing the location of CanDo workshops for CPRs and SCs to browse and consider how they can use them.
+
++ Response 200 (application/json)
+
+        [
+            {
+                "question": "Which part of CanDo workshops are you interested in?",
+                "published_at": "2017-05-26T00:00:00.000Z",
+                "choices": [
+                    {
+                        "choice": "AppDev"
+                    }, {
+                        "choice": "DevOps"
+                    }, {
+                        "choice": "CI/CD"
+                    }, {
+                        "choice": "WorkshopLocation"
+                    }
+                ]
+            }
+        ]
+        
+## Cloud Maintenance Collection [/cloudmaintenance]
+
+### Cloud Maintenance Location [GET]
+
+Cloud Maintenance windows are one of the most common questions asked about by customers, reps and SCs. Finding the source of cloud maintenance is a matter of looking in the support site, however, many don't find this. Returning the location of the relevant data for maintenance windows is the purpose of this API set.
 
 + Response 200 (application/json)
 
