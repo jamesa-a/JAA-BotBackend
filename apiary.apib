@@ -2,9 +2,141 @@ FORMAT: 1A
 HOST: http://polls.apiblueprint.org/
 
 # JAA-BotBackend
-
 JAA-BotBackend is the set of APIs that are required to repsond to the questions that JAA-Bot will have to deal with. 
 JAA-Bot is the mechanised replacement for JAA (Human) for many of the questions that take a ludicrous period of time to field, yet add value to the field. In many cases, these are simply a reposnse with a URL and therefore are better repeated by a Bot who will get the URLs more repeatedly correct than I JAA can type. 
+
+# ComponentProperty (object)
+# ComponentMetadata (object)
+## Properties
+- ComponentName (string)
+- ComponentProperties (ComponentProperty[])
+
+# ComponentRequest (object)
+## Properties
+- ComponentName (string)
+
+#ComponentResponse (object)
+
+#ComponentError (object) 
+
+
+## Component API [/AgeChecker]
+## Component API [/Pizzabaker]
+
+## Component API [/components]
+
+### GetComponents [GET]
+
++ Response 200 (application/json)
+    
+    + Body
+
+            [ 
+                {
+                    "name": "AgeChecker", 
+                    "channels": 
+                        {
+                            "facebook": "1.0" 
+                        },
+                    "componentProperties": 
+                        {
+                            "minAge": 
+                                { 
+                                    "type": "integer", 
+                                    "required": true 
+                                }
+                        },
+                    "supportedActions": 
+                        [
+                            "success",
+                            "fail"
+                        ]
+                },
+                {
+                    "name": "PizzaBaker", 
+                    "channels": 
+                        {
+                            "facebook": "1.0" 
+                        },
+                    "componentProperties": 
+                        {
+                            "size": 
+                                { 
+                                    "type": "string", 
+                                    "required": true 
+                                }, 
+                            "crust": 
+                                { 
+                                    "type": "string", 
+                                    "required": true 
+                                }, 
+                            "type": 
+                                { 
+                                    "type": "string", 
+                                    "required": true 
+                                }
+                        }, 
+                    "supportedActions": 
+                        [
+                            "pizzaReady",
+                            "fail" 
+                        ]
+                }
+            ]
+
+### PostComponents [POST]
+
++ Response 200 (application/json)
+
+    + Body
+            
+            {
+                "platformVersion": "1.0",
+                "context" : {
+                    "location" : {
+                        "type" : "String",
+                        "value" : "San Francisco",
+                        "entity" : false
+                    },
+                    "system.errorAction" : {
+                        "type" : "string",
+                        "value" : null,
+                        "entity" : false
+                    },
+                    "system.errorState" : {
+                        "type" : "string",
+                        "value" : null,
+                        "entity" : false
+                    }
+                }
+            },
+                "action" : null,
+                "exit" : false,
+                "done" : false,
+                "error" : false,
+                "modifyContext" : false
+            }
+            
+
+## Basic Auth Protection [/protected]
+
+### Status [GET]
+            
++ Response 401
+    + Headers
+    
+            WWW-Authenticate: Basic realm="hidden"
+
++ Request
+    + Headers
+    
+            Authorization: Basic ABC123
+
++ Response 200 (application/json)
+
+            {   
+                "status": "OK"
+            }
 
 ## Questions Collection [/questions]
 
@@ -33,6 +165,8 @@ JAA-Bot is the mechanised replacement for JAA (Human) for many of the questions 
                 ]
             }
         ]
+
+
 
 ### Create a New Question [POST]
 
