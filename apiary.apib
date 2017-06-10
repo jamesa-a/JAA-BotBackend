@@ -89,35 +89,39 @@ JAA-Bot is the mechanised replacement for JAA (Human) for many of the questions 
 + Response 200 (application/json)
 
     + Body
-            
-            {
-                "platformVersion": "1.0",
-                "context" : {
-                    "location" : {
-                        "type" : "String",
-                        "value" : "San Francisco",
-                        "entity" : false
-                    },
-                    "system.errorAction" : {
-                        "type" : "string",
-                        "value" : null,
-                        "entity" : false
-                    },
-                    "system.errorState" : {
-                        "type" : "string",
-                        "value" : null,
-                        "entity" : false
+        
+            [    
+                {
+                    "platformVersion": "1.0",
+                    "context" : 
+                    {
+                        "location" : 
+                        {
+                            "type" : "String",
+                            "value" : "San Francisco",
+                            "entity" : false
+                        },
+                        "system.errorAction" : 
+                        {
+                            "type" : "string",
+                            "value" : null,
+                            "entity" : false
+                        },
+                        "system.errorState" : 
+                        {
+                            "type" : "string",
+                            "value" : null,
+                            "entity" : false
+                        }
                     }
-                }
-            },
+                },
                 "action" : null,
                 "exit" : false,
                 "done" : false,
                 "error" : false,
                 "modifyContext" : false
-            }
-            
-
+            ]
+    
 ## Basic Auth Protection [/protected]
 
 ### Status [GET]
